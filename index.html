@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع الأذكار</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <header class="top-nav glass-card">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="ph ph-moon-stars"></i>
+                <span>أذكار</span>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <a href="#" class="nav-item active"><i class="ph ph-house"></i> الرئيسية</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button id="mobileMenuBtn" class="hamburger-btn icon-btn" aria-label="Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="mobile-menu glass-card">
+            <a href="#" class="nav-item active"><i class="ph ph-house"></i> الرئيسية</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Sidebar for Categories -->
+        <aside class="sidebar glass-card">
+            <h2 class="sidebar-title">أقسام الأذكار</h2>
+            <ul class="category-list" id="categoryList">
+                <!-- Categories will be dynamically injected here -->
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <section class="content-area">
+            <!-- Virtues Card -->
+            <div class="virtues-card glass-card">
+                <div class="virtues-icon">
+                    <i class="ph ph-sparkle"></i>
+                </div>
+                <div class="virtues-content">
+                    <h3>فضل الأذكار</h3>
+                    <p>الحفظ والتحصين من الله من الشيطان، الجن، الحسد، والمكروه، بالإضافة إلى مغفرة الذنوب، مضاعفة
+                        الحسنات، وطمأنينة القلب، كما تُعد سبباً لرضا الله وكفايته للعبد في يومه وليلته، وتعتبر درعاً
+                        حصيناً يقي المسلم من شرور الدنيا والآخرة.</p>
+                </div>
+            </div>
+
+            <div class="category-header glass-card">
+                <div class="dhikr-header">
+                    <h2 id="currentCategoryTitle">أذكار الصباح</h2>
+                    <div class="dhikr-progress">مكتمل: <span id="completedCount">0</span> من <span
+                            id="dhikrTotal">0</span></div>
+                </div>
+
+                <div class="category-progress-bar">
+                    <div class="category-progress-fill" id="categoryProgressFill"></div>
+                </div>
+            </div>
+
+            <div id="adhkarContainer" class="adhkar-list">
+                <!-- Cards will be dynamically generated here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
